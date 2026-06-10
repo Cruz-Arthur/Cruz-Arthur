@@ -48,18 +48,32 @@
     </radialGradient>
 
     <!--
+      Glass specular: oval highlight upper-left — helmet-visor room-light reflection
+      on the convex curved screen surface.
+    -->
+    <radialGradient id="spec" cx="38%" cy="20%" r="42%" fx="34%" fy="14%">
+      <stop offset="0%"   stop-color="white" stop-opacity="0.18"/>
+      <stop offset="35%"  stop-color="white" stop-opacity="0.06"/>
+      <stop offset="100%" stop-color="white" stop-opacity="0"/>
+    </radialGradient>
+
+    <!--
       Phosphor filter:
-        1. feTurbulence displacement scale=8 → oblique warp near edges
-           (center barely moves; edges wobble ±4px, reads as lens distortion
-            when contrasted against the aggressive vignette)
-        2. feGaussianBlur 0.45 → analog signal softness, anti-sharp-digital
-        3. feColorMatrix → warm amber phosphor tint (R+5%, B-13%)
+        1. feImage + feDisplacementMap — barrel distortion (2×2 PNG bitmap)
+           R channel: 0→1 left-to-right (X axis, full range)
+           G channel: 40→215/255 top-to-bottom (Y axis, scaled for 700:480 aspect
+             so visual barrel magnitude is equal in both axes: ~5% corner shift)
+           scale=-70 → negative = barrel (center magnifies, edges compress toward frame)
+        2. feGaussianBlur 0.45 — analog signal softness
+        3. feColorMatrix — warm amber phosphor tint (R+5%, B-13%)
         4. glow: extra-blurred copy at 0.22 alpha merged behind
     -->
     <filter id="ph" x="-8%" y="-8%" width="116%" height="116%">
-      <feTurbulence type="fractalNoise" baseFrequency="0.007 0.009"
-        numOctaves="2" seed="42" result="noise"/>
-      <feDisplacementMap in="SourceGraphic" in2="noise" scale="8"
+      <feImage
+        href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAACCAIAAAD91JpzAAAAFklEQVR4nGNg0GD4r8HAwHCd4f91BgAWKgP99QJWLwAAAABJRU5ErkJggg=="
+        x="0" y="0" width="700" height="480"
+        preserveAspectRatio="none" result="bmap"/>
+      <feDisplacementMap in="SourceGraphic" in2="bmap" scale="-70"
         xChannelSelector="R" yChannelSelector="G" result="warped"/>
       <feGaussianBlur stdDeviation="0.45" in="warped" result="soft"/>
       <feColorMatrix type="matrix"
@@ -263,6 +277,9 @@
 
   <!-- Vignette: convex helmet glass darkening at borders and corners -->
   <rect width="700" height="480" fill="url(#vig)"/>
+
+  <!-- CRT glass specular: room-light reflection on convex visor surface -->
+  <rect width="700" height="480" fill="url(#spec)"/>
 
   <!-- Screen flicker -->
   <rect width="700" height="480" fill="white">
