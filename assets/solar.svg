@@ -1,0 +1,185 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+     width="700" height="480" viewBox="0 0 700 480">
+  <defs>
+    <radialGradient id="sg" cx="40%" cy="35%" r="65%">
+      <stop offset="0%"   stop-color="#FAFAF8"/>
+      <stop offset="50%"  stop-color="#F5EDE3"/>
+      <stop offset="100%" stop-color="#C4956A" stop-opacity="0.5"/>
+    </radialGradient>
+    <radialGradient id="p1g" cx="35%" cy="28%" r="65%">
+      <stop offset="0%"   stop-color="#CBD8B2"/>
+      <stop offset="30%"  stop-color="#8AA86A"/>
+      <stop offset="62%"  stop-color="#4F7340"/>
+      <stop offset="90%"  stop-color="#233D1A"/>
+    </radialGradient>
+    <radialGradient id="p2g" cx="35%" cy="28%" r="65%">
+      <stop offset="0%"   stop-color="#8BACC4"/>
+      <stop offset="50%"  stop-color="#3D6080"/>
+      <stop offset="90%"  stop-color="#1A2E3D"/>
+    </radialGradient>
+    <radialGradient id="p3g" cx="35%" cy="28%" r="65%">
+      <stop offset="0%"   stop-color="#C4956A"/>
+      <stop offset="45%"  stop-color="#7A4B26"/>
+      <stop offset="90%"  stop-color="#2D1509"/>
+    </radialGradient>
+    <!-- Orbit motion paths — center (350,245) -->
+    <!-- Ring 1: r=96, CW (sweep=1) -->
+    <path id="o1" fill="none" d="M446,245 A96,96 0 0,1 350,341 A96,96 0 0,1 254,245 A96,96 0 0,1 350,149 A96,96 0 0,1 446,245"/>
+    <!-- Ring 2: r=157, CCW (sweep=0) -->
+    <path id="o2" fill="none" d="M507,245 A157,157 0 0,0 350,88 A157,157 0 0,0 193,245 A157,157 0 0,0 350,402 A157,157 0 0,0 507,245"/>
+    <!-- Ring 3: r=207, CW (sweep=1) -->
+    <path id="o3" fill="none" d="M557,245 A207,207 0 0,1 350,452 A207,207 0 0,1 143,245 A207,207 0 0,1 350,38 A207,207 0 0,1 557,245"/>
+  </defs>
+
+  <!-- ── Background ───────────────────────────────────── -->
+  <rect width="700" height="480" fill="#0d1117"/>
+
+  <!-- ── Stars ────────────────────────────────────────── -->
+  <!-- size 1px -->
+  <circle cx="45"  cy="22"  r="1" fill="#F5EDE3" opacity="0.45"><animate attributeName="opacity" values="0.45;0.15;0.45" dur="3.2s" repeatCount="indefinite"/></circle>
+  <circle cx="88"  cy="38"  r="1" fill="#F5EDE3" opacity="0.35"/>
+  <circle cx="135" cy="18"  r="1" fill="#F5EDE3" opacity="0.6"/>
+  <circle cx="192" cy="45"  r="1" fill="#F5EDE3" opacity="0.4"/>
+  <circle cx="248" cy="28"  r="2" fill="#F5EDE3" opacity="0.3"><animate attributeName="opacity" values="0.3;0.7;0.3" dur="4.1s" repeatCount="indefinite"/></circle>
+  <circle cx="303" cy="52"  r="1" fill="#F5EDE3" opacity="0.55"/>
+  <circle cx="388" cy="35"  r="1" fill="#F5EDE3" opacity="0.4"/>
+  <circle cx="440" cy="20"  r="1" fill="#F5EDE3" opacity="0.5"/>
+  <circle cx="488" cy="48"  r="1" fill="#F5EDE3" opacity="0.35"/>
+  <circle cx="538" cy="30"  r="2" fill="#F5EDE3" opacity="0.45"><animate attributeName="opacity" values="0.45;0.12;0.45" dur="5.3s" repeatCount="indefinite"/></circle>
+  <circle cx="592" cy="55"  r="1" fill="#F5EDE3" opacity="0.4"/>
+  <circle cx="638" cy="22"  r="1" fill="#F5EDE3" opacity="0.6"/>
+  <circle cx="678" cy="42"  r="1" fill="#F5EDE3" opacity="0.35"/>
+  <circle cx="22"  cy="62"  r="1" fill="#F5EDE3" opacity="0.4"/>
+  <circle cx="162" cy="70"  r="1" fill="#F5EDE3" opacity="0.3"/>
+  <circle cx="672" cy="68"  r="1" fill="#F5EDE3" opacity="0.4"/>
+  <circle cx="320" cy="22"  r="1" fill="#F5EDE3" opacity="0.5"/>
+  <circle cx="570" cy="75"  r="1" fill="#F5EDE3" opacity="0.35"/>
+  <!-- Left strip -->
+  <circle cx="18"  cy="115" r="1" fill="#F5EDE3" opacity="0.45"/>
+  <circle cx="52"  cy="158" r="1" fill="#F5EDE3" opacity="0.35"/>
+  <circle cx="28"  cy="198" r="2" fill="#F5EDE3" opacity="0.3"><animate attributeName="opacity" values="0.3;0.6;0.3" dur="6.1s" repeatCount="indefinite"/></circle>
+  <circle cx="45"  cy="242" r="1" fill="#F5EDE3" opacity="0.5"/>
+  <circle cx="22"  cy="285" r="1" fill="#F5EDE3" opacity="0.4"/>
+  <circle cx="68"  cy="328" r="1" fill="#F5EDE3" opacity="0.35"/>
+  <circle cx="35"  cy="372" r="1" fill="#F5EDE3" opacity="0.45"/>
+  <circle cx="82"  cy="415" r="1" fill="#F5EDE3" opacity="0.3"/>
+  <circle cx="18"  cy="455" r="1" fill="#F5EDE3" opacity="0.5"/>
+  <!-- Right strip -->
+  <circle cx="645" cy="118" r="1" fill="#F5EDE3" opacity="0.4"/>
+  <circle cx="682" cy="162" r="1" fill="#F5EDE3" opacity="0.5"/>
+  <circle cx="618" cy="205" r="1" fill="#F5EDE3" opacity="0.35"/>
+  <circle cx="668" cy="248" r="2" fill="#F5EDE3" opacity="0.3"><animate attributeName="opacity" values="0.3;0.65;0.3" dur="3.7s" repeatCount="indefinite"/></circle>
+  <circle cx="638" cy="292" r="1" fill="#F5EDE3" opacity="0.45"/>
+  <circle cx="688" cy="338" r="1" fill="#F5EDE3" opacity="0.35"><animate attributeName="opacity" values="0.35;0.08;0.35" dur="4.9s" repeatCount="indefinite"/></circle>
+  <circle cx="622" cy="382" r="1" fill="#F5EDE3" opacity="0.5"/>
+  <circle cx="658" cy="425" r="1" fill="#F5EDE3" opacity="0.35"/>
+  <circle cx="672" cy="462" r="1" fill="#F5EDE3" opacity="0.4"/>
+  <!-- Bottom strip -->
+  <circle cx="115" cy="448" r="1" fill="#F5EDE3" opacity="0.45"/>
+  <circle cx="195" cy="468" r="1" fill="#F5EDE3" opacity="0.35"><animate attributeName="opacity" values="0.35;0.7;0.35" dur="5.5s" repeatCount="indefinite"/></circle>
+  <circle cx="275" cy="452" r="1" fill="#F5EDE3" opacity="0.5"/>
+  <circle cx="348" cy="472" r="1" fill="#F5EDE3" opacity="0.3"/>
+  <circle cx="425" cy="458" r="2" fill="#F5EDE3" opacity="0.4"/>
+  <circle cx="505" cy="448" r="1" fill="#F5EDE3" opacity="0.45"/>
+  <circle cx="582" cy="470" r="1" fill="#F5EDE3" opacity="0.35"/>
+  <circle cx="655" cy="452" r="1" fill="#F5EDE3" opacity="0.5"/>
+  <circle cx="75"  cy="462" r="1" fill="#F5EDE3" opacity="0.35"/>
+  <circle cx="610" cy="465" r="1" fill="#F5EDE3" opacity="0.35"/>
+  <!-- Between orbits -->
+  <circle cx="168" cy="245" r="1" fill="#F5EDE3" opacity="0.3"/>
+  <circle cx="175" cy="172" r="1" fill="#F5EDE3" opacity="0.35"/>
+  <circle cx="175" cy="318" r="1" fill="#F5EDE3" opacity="0.3"/>
+  <circle cx="525" cy="172" r="1" fill="#F5EDE3" opacity="0.3"/>
+  <circle cx="528" cy="318" r="1" fill="#F5EDE3" opacity="0.35"/>
+  <circle cx="350" cy="38"  r="1" fill="#F5EDE3" opacity="0.4"/>
+  <circle cx="120" cy="142" r="1" fill="#F5EDE3" opacity="0.3"/>
+  <circle cx="120" cy="348" r="1" fill="#F5EDE3" opacity="0.3"/>
+  <circle cx="580" cy="142" r="1" fill="#F5EDE3" opacity="0.3"/>
+  <circle cx="580" cy="348" r="1" fill="#F5EDE3" opacity="0.3"/>
+
+  <!-- ── Orbital rings ──────────────────────────────── -->
+  <circle cx="350" cy="245" r="96"  fill="none" stroke="#4A4540" stroke-width="0.5" stroke-dasharray="2,6" opacity="0.7"/>
+  <circle cx="350" cy="245" r="157" fill="none" stroke="#4A4540" stroke-width="0.5" stroke-dasharray="2,6" opacity="0.7"/>
+  <circle cx="350" cy="245" r="207" fill="none" stroke="#4A4540" stroke-width="0.5" stroke-dasharray="2,6" opacity="0.7"/>
+
+  <!-- ── Sun ───────────────────────────────────────── -->
+  <!-- outer corona pulse -->
+  <circle cx="350" cy="245" r="38" fill="none" stroke="#C4956A" stroke-width="1.2" opacity="0">
+    <animate attributeName="r"       values="32;52;32" dur="4s" repeatCount="indefinite" calcMode="linear"/>
+    <animate attributeName="opacity" values="0;0.2;0"  dur="4s" repeatCount="indefinite" calcMode="linear"/>
+  </circle>
+  <!-- sun body -->
+  <circle cx="350" cy="245" r="28" fill="url(#sg)">
+    <animate attributeName="r"       values="26;30;26" dur="4s" repeatCount="indefinite" calcMode="linear"/>
+    <animate attributeName="opacity" values="0.88;1;0.88" dur="4s" repeatCount="indefinite" calcMode="linear"/>
+  </circle>
+
+  <!-- ── Explorer probe (ring 1, 46s) ─────────────── -->
+  <g>
+    <animateMotion dur="46s" repeatCount="indefinite" rotate="0" begin="-10s">
+      <mpath href="#o1" xlink:href="#o1"/>
+    </animateMotion>
+    <circle r="3.5" fill="#F5EDE3" opacity="0.9"/>
+    <circle r="3.5" fill="none" stroke="#C4956A" stroke-width="0.8"/>
+  </g>
+
+  <!-- ── Planet 1: Tech Innova (ring 1, 110s CW) ─── -->
+  <g>
+    <animateMotion dur="110s" repeatCount="indefinite" rotate="0" begin="-23s">
+      <mpath href="#o1" xlink:href="#o1"/>
+    </animateMotion>
+    <circle r="16" fill="url(#p1g)"/>
+    <text y="27" text-anchor="middle"
+          font-family="'Courier New',Courier,monospace"
+          font-size="8.5" fill="#8AA86A" letter-spacing="0.4">Tech Innova</text>
+    <text y="37" text-anchor="middle"
+          font-family="'Courier New',Courier,monospace"
+          font-size="7" fill="#4F7340" opacity="0.8">Node · TS · Express</text>
+  </g>
+
+  <!-- ── Planet 2: Forming (ring 2, 158s CCW) ─────── -->
+  <g>
+    <animateMotion dur="158s" repeatCount="indefinite" rotate="0" begin="-55s">
+      <mpath href="#o2" xlink:href="#o2"/>
+    </animateMotion>
+    <circle r="12" fill="url(#p2g)"/>
+    <g>
+      <animate attributeName="opacity" values="1;0.15;1" dur="2.3s" repeatCount="indefinite"/>
+      <text y="21" text-anchor="middle"
+            font-family="'Courier New',Courier,monospace"
+            font-size="7.5" fill="#4A6E8A" letter-spacing="0.3">· SINAL FRACO ·</text>
+    </g>
+  </g>
+
+  <!-- ── Planet 3: Proto (ring 3, 205s CW) ───────── -->
+  <g>
+    <animateMotion dur="205s" repeatCount="indefinite" rotate="0" begin="-85s">
+      <mpath href="#o3" xlink:href="#o3"/>
+    </animateMotion>
+    <circle r="10" fill="url(#p3g)"/>
+    <g>
+      <animate attributeName="opacity" values="0.3;1;0.3" dur="3.1s" repeatCount="indefinite"/>
+      <text y="18" text-anchor="middle"
+            font-family="'Courier New',Courier,monospace"
+            font-size="7" fill="#7A4B26" letter-spacing="0.3">· EM COALESCÊNCIA ·</text>
+    </g>
+  </g>
+
+  <!-- ── Labels & HUD ──────────────────────────────── -->
+  <text x="18" y="16" font-family="'Courier New',Courier,monospace"
+        font-size="8.5" fill="#4A4540" letter-spacing="2">02 · SISTEMA SOLAR · Expedições</text>
+
+  <circle cx="650" cy="13" r="2.5" fill="#8AA86A">
+    <animate attributeName="opacity" values="1;0.2;1" dur="2.1s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="660" cy="13" r="2.5" fill="#C4956A">
+    <animate attributeName="opacity" values="0.2;1;0.2" dur="1.7s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="670" cy="13" r="2.5" fill="#8AA86A">
+    <animate attributeName="opacity" values="1;0.1;1" dur="1.3s" repeatCount="indefinite"/>
+  </circle>
+
+  <text x="350" y="472" text-anchor="middle"
+        font-family="'Courier New',Courier,monospace"
+        font-size="7.5" fill="#2a3040" letter-spacing="1.5">Novas missões em campo</text>
+</svg>

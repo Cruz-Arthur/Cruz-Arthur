@@ -1,0 +1,127 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="700" height="100" viewBox="0 0 700 100">
+  <rect width="700" height="100" fill="#0d1117"/>
+  <line x1="0" y1="86" x2="700" y2="86" stroke="#1e2530" stroke-width="0.8"/>
+  <text x="18" y="97" font-family="'Courier New',Courier,monospace"
+        font-size="7.5" fill="#2a3040" letter-spacing="2">THE WALKER · EM CAMPO</text>
+  <circle cx="672" cy="10" r="2.5" fill="#8AA86A">
+    <animate attributeName="opacity" values="1;0.1;1" dur="1.8s" repeatCount="indefinite"/>
+  </circle>
+
+  <!--
+    Horizontal travel: equal halves, ease-in-out at both edges.
+    X-flip at t=0.5 mirrors figure+missile together — both always face forward.
+    Lean: rotate(+25) clockwise → top goes +x (right). Going right = forward lean.
+          After scale(-1) the lean mirrors to -x = still forward for going left.
+    Legs: heel-strike foot at +x (in front for going right). Toe-off at -x (behind).
+          After flip both are correct for going left automatically.
+    Missile: at x=-75 in local = BEHIND walker in both directions after flip.
+  -->
+
+  <g>
+    <animateTransform attributeName="transform" type="translate"
+      values="-60,20; 760,20; -60,20"
+      keyTimes="0;0.5;1"
+      calcMode="spline"
+      keySplines="0.4 0 0.6 1; 0.4 0 0.6 1"
+      dur="18s" repeatCount="indefinite"/>
+
+    <g>
+      <animateTransform attributeName="transform" type="scale"
+        values="1,1; -1,1; 1,1"
+        keyTimes="0;0.5;1"
+        calcMode="discrete"
+        dur="18s" repeatCount="indefinite"/>
+
+      <!-- Missile: x=-75 puts it BEHIND walker (negative = behind for going right).
+           After scale(-1) it flips to +75 = behind for going left. Always chasing. -->
+      <g transform="translate(-75,28)">
+        <animateTransform attributeName="transform" type="translate" additive="sum"
+          values="0,-2; 0,2; 0,-2" dur="0.38s" repeatCount="indefinite" calcMode="linear"/>
+
+        <!-- Exhaust flames, leftward (opposite of nose direction) -->
+        <ellipse cx="-20" cy="0" rx="13" ry="3.5" fill="#C4956A" opacity="0.5">
+          <animate attributeName="rx" values="13;22;8;13" dur="0.22s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.55;0.18;0.7;0.55" dur="0.22s" repeatCount="indefinite"/>
+        </ellipse>
+        <ellipse cx="-31" cy="0" rx="7" ry="2" fill="#F5EDE3" opacity="0.3">
+          <animate attributeName="rx" values="7;15;4;7" dur="0.22s" begin="-0.11s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.3;0.08;0.42;0.3" dur="0.22s" begin="-0.11s" repeatCount="indefinite"/>
+        </ellipse>
+
+        <!-- Tail fins -->
+        <polygon points="-13,-4 -21,-12 -11,-4" fill="#4A4540"/>
+        <polygon points="-13,4 -21,12 -11,4" fill="#4A4540"/>
+
+        <!-- Body -->
+        <rect x="-13" y="-4" width="25" height="8" rx="3" fill="#8d7b6e"/>
+
+        <!-- Nose cone points RIGHT (toward walker) -->
+        <polygon points="12,-4 22,0 12,4" fill="#C4956A"/>
+
+        <!-- Porthole -->
+        <circle cx="1" cy="0" r="2.2" fill="#1e2530"/>
+        <circle cx="1" cy="0" r="1.1" fill="#4A6E8A" opacity="0.9"/>
+      </g>
+
+      <!-- rotate(+25): clockwise, top goes right = forward lean for rightward travel -->
+      <g transform="rotate(25,0,41)">
+
+        <circle cx="0" cy="14" r="5"
+                fill="none" stroke="#F5EDE3" stroke-width="1.5"/>
+
+        <line x1="0" y1="19" x2="0" y2="41"
+              stroke="#F5EDE3" stroke-width="1.5" stroke-linecap="round"/>
+
+        <!-- BACK ARM -->
+        <path fill="none" stroke="#F5EDE3" stroke-width="1.2"
+              stroke-linecap="round" stroke-linejoin="round" opacity="0.5"
+              d="M0,25 L-6,31 L-3,38">
+          <animate attributeName="d"
+            values="M0,25 L-6,31 L-3,38; M0,25 L6,31 L9,39; M0,25 L-6,31 L-3,38"
+            keyTimes="0;0.5;1" dur="0.55s" repeatCount="indefinite" calcMode="linear"/>
+        </path>
+
+        <!-- BACK LEG: toe-off (+x=forward so back=-x behind) > swing > heel > stance
+             At t=0: toe-off, foot at -10 (behind). Mirror of front leg at half phase. -->
+        <path fill="none" stroke="#F5EDE3" stroke-width="1.4"
+              stroke-linecap="round" stroke-linejoin="round" opacity="0.5"
+              d="M0,41 L-7,52 L-10,63">
+          <animate attributeName="d"
+            values="M0,41 L-7,52 L-10,63;
+                    M0,41 L5,46 L3,36;
+                    M0,41 L6,52 L10,64;
+                    M0,41 L0,54 L0,66;
+                    M0,41 L-7,52 L-10,63"
+            keyTimes="0;0.25;0.5;0.75;1"
+            dur="0.55s" repeatCount="indefinite" calcMode="linear"/>
+        </path>
+
+        <!-- FRONT ARM -->
+        <path fill="none" stroke="#F5EDE3" stroke-width="1.4"
+              stroke-linecap="round" stroke-linejoin="round"
+              d="M0,25 L6,31 L9,39">
+          <animate attributeName="d"
+            values="M0,25 L6,31 L9,39; M0,25 L-6,31 L-3,38; M0,25 L6,31 L9,39"
+            keyTimes="0;0.5;1" dur="0.55s" repeatCount="indefinite" calcMode="linear"/>
+        </path>
+
+        <!-- FRONT LEG: heel-strike (foot at +x, in front) > stance > toe-off > swing
+             +x = toward direction of travel = in front for going right.
+             Knee lifts at high-swing with foot tucked back behind knee. -->
+        <path fill="none" stroke="#F5EDE3" stroke-width="1.6"
+              stroke-linecap="round" stroke-linejoin="round"
+              d="M0,41 L6,52 L10,64">
+          <animate attributeName="d"
+            values="M0,41 L6,52 L10,64;
+                    M0,41 L0,54 L0,66;
+                    M0,41 L-7,52 L-10,63;
+                    M0,41 L5,46 L3,36;
+                    M0,41 L6,52 L10,64"
+            keyTimes="0;0.25;0.5;0.75;1"
+            dur="0.55s" repeatCount="indefinite" calcMode="linear"/>
+        </path>
+
+      </g>
+    </g>
+  </g>
+</svg>
