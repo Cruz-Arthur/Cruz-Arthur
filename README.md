@@ -46,21 +46,6 @@
 
 [![Activity Graph](https://github-readme-activity-graph.vercel.app/graph?username=Cruz-Arthur&theme=github-compact&hide_border=true&bg_color=0d1117&color=C4956A&line=8AA86A&point=C4956A&area=true&area_color=4F7340)](https://github.com/ashutosh00710/github-readme-activity-graph)
 
-<br>
-
-<picture>
-  <source media="(prefers-color-scheme: dark)"  srcset="profile-3d-contrib/profile-south-season-animate.svg"/>
-  <source media="(prefers-color-scheme: light)" srcset="profile-3d-contrib/profile-south-season-animate.svg"/>
-  <img alt="3D contribution graph" src="profile-3d-contrib/profile-south-season-animate.svg" width="100%"/>
-</picture>
-
-<br>
-
-<details>
-<summary><sub>· · · game of life · · ·</sub></summary>
-<br>
-<img src="./contrib/life.gif" alt="Game of Life gerado das contribuições" width="100%"/>
-</details>
 
 </div>
 
