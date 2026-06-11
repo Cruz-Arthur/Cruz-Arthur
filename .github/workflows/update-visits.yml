@@ -1,0 +1,45 @@
+name: Update Visit Badge
+
+on:
+  schedule:
+    - cron: "0 6 * * *"
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths-ignore:
+      - "assets/badge-visits.svg"
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Fetch visit count from komarev
+        id: count
+        run: |
+          BADGE=$(curl -s --max-time 10 "https://komarev.com/ghpvc/?username=Cruz-Arthur&style=flat-square&label=views" || echo "")
+          COUNT=$(echo "$BADGE" | grep -oP '(?<=>)\d[\d,]*(?=<)' | tail -1 | tr -d ',')
+          if [ -z "$COUNT" ]; then
+            echo "count=" >> $GITHUB_OUTPUT
+          else
+            echo "count=$COUNT" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Update badge SVG
+        if: steps.count.outputs.count != ''
+        run: |
+          sed -i "s/VISITAS: COUNT_MARKER/VISITAS: ${{ steps.count.outputs.count }}/" assets/badge-visits.svg
+          sed -i "s/VISITAS: [0-9]*/VISITAS: ${{ steps.count.outputs.count }}/" assets/badge-visits.svg
+
+      - name: Commit if changed
+        if: steps.count.outputs.count != ''
+        run: |
+          git config user.name "Cruz-Arthur"
+          git config user.email "arthurcaue100@gmail.com"
+          git add assets/badge-visits.svg
+          git diff --cached --quiet || git commit -m "chore: update visit count to ${{ steps.count.outputs.count }}"
+          git push
