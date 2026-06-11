@@ -43,7 +43,7 @@
   <g filter="url(#ph)">
     <!-- COUNT_MARKER is replaced daily by .github/workflows/update-visits.yml -->
     <text x="100" y="26" class="m" text-anchor="middle"
-          fill="#EEC07A" font-size="16" letter-spacing="2">VISITAS: COUNT_MARKER</text>
+          fill="#EEC07A" font-size="16" letter-spacing="2">VISITAS: 11</text>
   </g>
 
   <rect width="200" height="40" fill="url(#crt)" rx="4"/>
