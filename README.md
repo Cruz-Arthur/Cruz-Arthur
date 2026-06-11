@@ -19,7 +19,7 @@
 <br>
 
 <div align="center">
-  <img src="./assets/solar.svg" width="700" alt="Sistema Solar de Expedições" />
+  <a href="https://arthur-caue.vercel.app/#projects"><img src="./assets/solar.svg" width="700" alt="Sistema Solar de Expedições" /></a>
 </div>
 
 <br>
