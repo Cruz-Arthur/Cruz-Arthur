@@ -227,11 +227,25 @@
     <!-- Labels & HUD -->
     <text x="18" y="16" font-family="'Courier New',Courier,monospace"
           font-size="8.5" fill="#6A6560" letter-spacing="2">02 · SISTEMA SOLAR · Expedições</text>
+
+    <!-- PROJETOS label — inside top-left bracket corner (y=42..84, x=10..52) -->
+    <text x="70" y="110" font-family="'Courier New',Courier,monospace"
+          font-size="18" fill="#ffb340" letter-spacing="2">
+      PROJETOS
+      <animate attributeName="opacity"
+        values="1;1;0.06;1;1;0.06;0.85;0.06;1;1;1;0.05;1;1;0.06;0.06;0.88;1;1"
+        keyTimes="0;0.07;0.075;0.08;0.22;0.35;0.355;0.36;0.37;0.5;0.65;0.66;0.665;0.8;0.87;0.875;0.88;0.89;1"
+        dur="4.2s" repeatCount="indefinite"/>
+    </text>
+
     <circle cx="650" cy="13" r="2.5" fill="#8AA86A">
       <animate attributeName="opacity" values="1;0.2;1" dur="2.1s" repeatCount="indefinite"/>
     </circle>
     <circle cx="660" cy="13" r="2.5" fill="#C4956A">
-      <animate attributeName="opacity" values="0.2;1;0.2" dur="1.7s" repeatCount="indefinite"/>
+      <animate attributeName="opacity"
+        values="1;1;0.06;1;1;0.06;0.85;0.06;1;1;1;0.05;1;1;0.06;0.06;0.88;1;1"
+        keyTimes="0;0.07;0.075;0.08;0.22;0.35;0.355;0.36;0.37;0.5;0.65;0.66;0.665;0.8;0.87;0.875;0.88;0.89;1"
+        dur="4.2s" repeatCount="indefinite"/>
     </circle>
     <circle cx="670" cy="13" r="2.5" fill="#8AA86A">
       <animate attributeName="opacity" values="1;0.1;1" dur="1.3s" repeatCount="indefinite"/>
@@ -247,26 +261,62 @@
   <!-- Pixel grid: scanlines + pixel separators -->
   <rect width="700" height="480" fill="url(#crt)"/>
 
-  <!-- Horizontal sync glitch band A -->
+  <!-- Glitch band A — horizontal sync tear, frequent -->
   <rect x="0" width="700" height="6" fill="#EDE8DF" opacity="0">
     <animate attributeName="y"
-      values="80;200;130;320;80" keyTimes="0;0.25;0.5;0.75;1"
-      dur="4.4s" repeatCount="indefinite" calcMode="discrete"/>
+      values="80;200;130;320;55;410;80" keyTimes="0;0.17;0.33;0.5;0.67;0.83;1"
+      dur="3.1s" repeatCount="indefinite" calcMode="discrete"/>
     <animate attributeName="opacity"
-      values="0;0;0.08;0;0;0;0.05;0;0"
-      keyTimes="0;0.2;0.21;0.23;0.44;0.6;0.61;0.63;1"
-      dur="4.4s" repeatCount="indefinite"/>
+      values="0;0;0.14;0;0;0.10;0;0;0.12;0;0"
+      keyTimes="0;0.15;0.16;0.19;0.38;0.55;0.56;0.58;0.77;0.78;1"
+      dur="3.1s" repeatCount="indefinite"/>
   </rect>
 
-  <!-- Horizontal sync glitch band B -->
-  <rect x="0" width="700" height="5" fill="#EDE8DF" opacity="0">
+  <!-- Glitch band B — slower wide roll -->
+  <rect x="0" width="700" height="9" fill="#EDE8DF" opacity="0">
     <animate attributeName="y"
-      values="350;110;270;60;350" keyTimes="0;0.25;0.5;0.75;1"
-      dur="6.1s" repeatCount="indefinite" calcMode="discrete"/>
+      values="350;110;270;60;420;350" keyTimes="0;0.2;0.4;0.6;0.8;1"
+      dur="5.2s" repeatCount="indefinite" calcMode="discrete"/>
     <animate attributeName="opacity"
-      values="0;0;0;0.06;0;0;0;0.04;0;0"
-      keyTimes="0;0.1;0.3;0.31;0.33;0.52;0.72;0.73;0.75;1"
-      dur="6.1s" repeatCount="indefinite"/>
+      values="0;0;0;0.09;0;0;0;0.07;0;0;0.05;0"
+      keyTimes="0;0.08;0.27;0.28;0.30;0.48;0.65;0.66;0.68;0.82;0.83;1"
+      dur="5.2s" repeatCount="indefinite"/>
+  </rect>
+
+  <!-- Glitch band C — tight fast flicker near top -->
+  <rect x="0" width="700" height="3" fill="#C8D8FF" opacity="0">
+    <animate attributeName="y"
+      values="95;42;180;65;95" keyTimes="0;0.25;0.5;0.75;1"
+      dur="2.3s" repeatCount="indefinite" calcMode="discrete"/>
+    <animate attributeName="opacity"
+      values="0;0;0.11;0;0;0.08;0;0"
+      keyTimes="0;0.1;0.11;0.13;0.52;0.53;0.55;1"
+      dur="2.3s" repeatCount="indefinite"/>
+  </rect>
+
+  <!-- Glitch band D — rare wide desync pulse -->
+  <rect x="0" width="700" height="14" fill="#EDE8DF" opacity="0">
+    <animate attributeName="y"
+      values="240;380;120;240" keyTimes="0;0.33;0.66;1"
+      dur="9.7s" repeatCount="indefinite" calcMode="discrete"/>
+    <animate attributeName="opacity"
+      values="0;0;0;0;0.13;0;0;0;0;0.09;0;0"
+      keyTimes="0;0.1;0.2;0.30;0.31;0.33;0.5;0.6;0.70;0.71;0.73;1"
+      dur="9.7s" repeatCount="indefinite"/>
+  </rect>
+
+  <!-- Lateral signal drift — right-shifted ghost strip -->
+  <rect x="18" width="640" height="4" fill="#F5EDE3" opacity="0">
+    <animate attributeName="y"
+      values="155;310;220;155" keyTimes="0;0.33;0.66;1"
+      dur="7.3s" repeatCount="indefinite" calcMode="discrete"/>
+    <animate attributeName="opacity"
+      values="0;0;0;0.07;0;0;0;0.05;0"
+      keyTimes="0;0.12;0.38;0.39;0.41;0.65;0.78;0.79;1"
+      dur="7.3s" repeatCount="indefinite"/>
+    <animate attributeName="x"
+      values="0;12;0;12;0" keyTimes="0;0.39;0.4;0.79;1"
+      dur="7.3s" repeatCount="indefinite" calcMode="discrete"/>
   </rect>
 
   <!-- Chromatic aberration: lens fringing at all 4 edges -->
@@ -281,12 +331,20 @@
   <!-- CRT glass specular: room-light reflection on convex visor surface -->
   <rect width="700" height="480" fill="url(#spec)"/>
 
-  <!-- Screen flicker -->
+  <!-- Screen flicker — more frequent dropout events -->
   <rect width="700" height="480" fill="white">
     <animate attributeName="opacity"
-      values="0;0;0;0.04;0;0;0;0;0.02;0;0;0.05;0;0;0.01;0"
-      keyTimes="0;0.06;0.13;0.14;0.15;0.26;0.36;0.45;0.46;0.47;0.58;0.59;0.60;0.72;0.86;1"
-      dur="7.4s" repeatCount="indefinite"/>
+      values="0;0;0.07;0;0;0;0.04;0;0.08;0;0;0.03;0;0.06;0;0;0.02;0;0.05;0;0"
+      keyTimes="0;0.04;0.05;0.06;0.16;0.24;0.25;0.26;0.38;0.39;0.48;0.49;0.50;0.61;0.62;0.70;0.71;0.72;0.85;0.86;1"
+      dur="5.8s" repeatCount="indefinite"/>
+  </rect>
+
+  <!-- Signal blackout — rare full dropout -->
+  <rect width="700" height="480" fill="#0d1117" opacity="0">
+    <animate attributeName="opacity"
+      values="0;0;0;0;0.95;0;0;0;0;0.92;0;0"
+      keyTimes="0;0.15;0.3;0.44;0.45;0.46;0.6;0.75;0.88;0.89;0.895;1"
+      dur="14.3s" repeatCount="indefinite"/>
   </rect>
 
   <!-- ── Visor corner brackets (drawn last, on top of vignette) ─── -->
