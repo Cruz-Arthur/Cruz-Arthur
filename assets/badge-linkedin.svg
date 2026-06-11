@@ -41,8 +41,8 @@
   <rect width="160" height="40" fill="#0d1117" rx="4"/>
 
   <g filter="url(#ph)">
-    <text x="20" y="15" class="m" fill="#5A5550" font-size="7" letter-spacing="1.8">LINKEDIN</text>
-    <text x="20" y="30" class="m" fill="#8AA86A" font-size="9.5" letter-spacing="0.3">Arthur Cauê</text>
+    <text x="20" y="14" class="m" fill="#9A9490" font-size="8.5" letter-spacing="1.8">LINKEDIN</text>
+    <text x="20" y="31" class="m" fill="#A8CC88" font-size="12" letter-spacing="0.3">Arthur Cauê</text>
   </g>
 
   <rect width="160" height="40" fill="url(#crt)" rx="4"/>
