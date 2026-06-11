@@ -6,13 +6,7 @@
 
 <br>
 
-[![Portfolio](https://img.shields.io/badge/Portfolio-arthur--caue.vercel.app-C4956A?style=for-the-badge&labelColor=1e1e1e)](https://arthur-caue.vercel.app/)
-&nbsp;
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Arthur%20Cau%C3%AA-8AA86A?style=for-the-badge&labelColor=1e1e1e&logo=linkedin&logoColor=8AA86A)](https://www.linkedin.com/in/arthur-caue/)
-&nbsp;
-[![Email](https://img.shields.io/badge/Email-arthurcaue100%40gmail.com-8d7b6e?style=for-the-badge&labelColor=1e1e1e)](mailto:arthurcaue100@gmail.com)
-&nbsp;
-![Visits](https://komarev.com/ghpvc/?username=Cruz-Arthur&color=C4956A&style=for-the-badge&label=visitas)
+<a href="https://arthur-caue.vercel.app/"><img src="./assets/badge-portfolio.svg" height="40" alt="Portfolio"/></a>&nbsp;<a href="https://www.linkedin.com/in/arthur-caue/"><img src="./assets/badge-linkedin.svg" height="40" alt="LinkedIn"/></a>&nbsp;<a href="mailto:arthurcaue100@gmail.com"><img src="./assets/badge-email.svg" height="40" alt="Email"/></a>&nbsp;<img src="./assets/badge-visits.svg" height="40" alt="Visitas"/>
 
 </div>
 

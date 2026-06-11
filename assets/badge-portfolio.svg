@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="210" height="40" viewBox="0 0 210 40">
+  <defs>
+    <style>.m{font-family:'Courier New',Courier,monospace;}</style>
+    <pattern id="crt" width="4" height="2" patternUnits="userSpaceOnUse">
+      <rect y="1" width="4" height="1" fill="black" opacity="0.16"/>
+      <rect width="0.6" height="2" fill="black" opacity="0.08"/>
+    </pattern>
+    <radialGradient id="vig" cx="50%" cy="50%" r="72%">
+      <stop offset="0%"   stop-color="black" stop-opacity="0"/>
+      <stop offset="50%"  stop-color="black" stop-opacity="0.10"/>
+      <stop offset="72%"  stop-color="black" stop-opacity="0.78"/>
+      <stop offset="100%" stop-color="black" stop-opacity="0.97"/>
+    </radialGradient>
+    <radialGradient id="spec" cx="42%" cy="28%" r="36%" fx="38%" fy="22%">
+      <stop offset="0%"   stop-color="white" stop-opacity="0.13"/>
+      <stop offset="45%"  stop-color="white" stop-opacity="0.03"/>
+      <stop offset="100%" stop-color="white" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="ph" x="-6%" y="-14%" width="112%" height="128%">
+      <feImage
+        href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAACCAIAAAD91JpzAAAAFklEQVR4nGNgSGD4n8DAwDCf4f98BgAZOgP9MFM9OgAAAABJRU5ErkJggg=="
+        x="0" y="0" width="210" height="40"
+        preserveAspectRatio="none" result="bmap"/>
+      <feDisplacementMap in="SourceGraphic" in2="bmap" scale="-12"
+        xChannelSelector="R" yChannelSelector="G" result="warped"/>
+      <feGaussianBlur stdDeviation="0.4" in="warped" result="soft"/>
+      <feColorMatrix type="matrix"
+        values="1.06 0    0    0  0.03
+                0    0.96 0    0  0
+                0    0    0.86 0  0
+                0    0    0    1  0"
+        in="soft" result="tinted"/>
+      <feGaussianBlur stdDeviation="2" in="tinted" result="gblur"/>
+      <feColorMatrix type="matrix"
+        values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 0.32 0"
+        in="gblur" result="glow"/>
+      <feMerge><feMergeNode in="glow"/><feMergeNode in="tinted"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="210" height="40" fill="#0d1117" rx="4"/>
+
+  <g filter="url(#ph)">
+    <text x="20" y="15" class="m" fill="#5A5550" font-size="7" letter-spacing="1.8">PORTIFÓLIO</text>
+    <text x="20" y="30" class="m" fill="#C4956A" font-size="9.5" letter-spacing="0.3">arthur-caue.vercel.app</text>
+  </g>
+
+  <rect width="210" height="40" fill="url(#crt)" rx="4"/>
+  <rect x="0" y="0"    width="210" height="1.5" fill="#FF1800" opacity="0.07" rx="4"/>
+  <rect x="0" y="38.5" width="210" height="1.5" fill="#0030FF" opacity="0.05" rx="4"/>
+  <rect width="210" height="40" fill="url(#vig)" rx="4"/>
+  <rect width="210" height="40" fill="url(#spec)" rx="4"/>
+
+  <!-- TL -->
+  <line x1="6"   y1="8"  x2="14"  y2="8"  stroke="#5A5550" stroke-width="1.2" stroke-linecap="square"/>
+  <line x1="6"   y1="8"  x2="6"   y2="16" stroke="#5A5550" stroke-width="1.2" stroke-linecap="square"/>
+  <!-- TR -->
+  <line x1="196" y1="8"  x2="204" y2="8"  stroke="#5A5550" stroke-width="1.2" stroke-linecap="square"/>
+  <line x1="204" y1="8"  x2="204" y2="16" stroke="#5A5550" stroke-width="1.2" stroke-linecap="square"/>
+  <!-- BL -->
+  <line x1="6"   y1="24" x2="6"   y2="32" stroke="#5A5550" stroke-width="1.2" stroke-linecap="square"/>
+  <line x1="6"   y1="32" x2="14"  y2="32" stroke="#5A5550" stroke-width="1.2" stroke-linecap="square"/>
+  <!-- BR -->
+  <line x1="204" y1="24" x2="204" y2="32" stroke="#5A5550" stroke-width="1.2" stroke-linecap="square"/>
+  <line x1="196" y1="32" x2="204" y2="32" stroke="#5A5550" stroke-width="1.2" stroke-linecap="square"/>
+
+  <rect width="210" height="40" fill="white" rx="4">
+    <animate attributeName="opacity"
+      values="0;0;0.04;0;0;0.02;0;0"
+      keyTimes="0;0.15;0.16;0.17;0.55;0.56;0.57;1"
+      dur="9.1s" repeatCount="indefinite"/>
+  </rect>
+</svg>
